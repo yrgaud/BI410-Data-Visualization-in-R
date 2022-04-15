@@ -1,0 +1,104 @@
+---
+output: html_document
+---
+
+```{r setup, include=FALSE, warning=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+# Final Project Literature Review and Workflow
+Yuki Gaudreault
+
+BI 410/510: Data Management and Visualization
+
+Dr. Lauren Hallett
+
+November 13, 2021
+
+## Literature Review
+
+In eukaryotic cells, DNA is highly organized to form a complex 3D genome structure (Zheng & Xie, 2019). This structure is of great interest because when defective, it can lead to development abnormalities and human disease (Zheng & Xie, 2019). It is known that eukaryotic genomes are organized in differently sized chromatin domains, including topologically associating domains (TADs) (Noma, 2017; Tanizawa et al., 2017). TADs represent genome-organizing units which organize euchromatin and heterochromatin domains and therefore coregulate transcription (Dixon et al., 2012; Tanizawa et al., 2017). However, it is still unknown how different types of chromatin domains are formed and regulated. 
+
+The in situ Hi-C method has been applied to fission yeast cells to show that condensin and cohesin each form large chromatin domains (~ 500 kb) and small domains (~ 50 kb), respectively (Lieberman-Aiden et al., 2009; Tanizawa et al., 2017). Condensin protein complexes are known to be crucial in the structural formation of mitotic chromosomes (Hudson et al., 2009) while cohesin protein complexes are necessary for sister chromatid cohesion (Nasmyth & Haering, 2009). In terms of their domains, it was found that condensin domains are chromosomal compaction units that are required for proper chromosome segregation, whereas cohesin domains are promoted during interphase (Tanizawa et al., 2017). All of this has been found using Hi-C sequencing data of wild type strains compared against strains with mutated condensin and cohesin complexes (Tanizawa et al., 2017). Though mechanisms that drive the regulation of cohesin binding have been elucidated, it is still unclear how condensin domains are formed and regulated.
+
+To investigate the mechanism of condensin domain formation, the Noma lab at the University of Oregon has performed yeast two-hybrid screening (Fields & Song, 1989) to identify 25 proteins that interact with condensin. Among these, 9 genes are essential for viability. These include sds3 which encodes a Clr6 histone deacetylase complex subunit (Nicholas et al., 2007). During the past year, I have constructed conditional knock-out strains for these essential genes using the auxin-inducible degradation system which conditionally allows for the complete removal of target proteins (Kanke et al., 2011). I have also performed an in situ Hi-C experiment on the sds3 deletion strain to be sequenced at the Genomics & Cell Characterization Core Facility (Lieberman-Aiden et al., 2009). Thus, the data available has expanded to Hi-C sequencing models of strains with mutated proteins that are known to interact with condensin. Bioinformatics analysis of this sequencing data will show how frequently genomic loci interact across the fission yeast genome. 
+
+In this project, I propose to further analyze these sequencing results by combining wild type and Δsds3 sequencing data to determine the role that it plays in genome organization in fission yeast. This data visualization will help advance our understanding of how the 3D genome is organized and regulated and reveal novel mechanisms regulating condensin domains that are essential for proper chromosome segregation. Specifically, I will address the following questions:
+
+- Does Sds3 have a role in regulating condensin domains?
+
+- How does distance affect association strength between different locations in the genome?
+
+- How does Sds3 affect the change association strength over distance?
+
+I predict that my analysis will show that Sds3 has a significant positive role in regulating condensin domains (demonstrated by TADs), and that more distant locations within chromosomes will have reduced association strength regardless of Sds3’s presence. 
+
+## Literature Cited
+Bahler, J., Wu, J., Longtine, M. S., Shah N. G., McKenzie, A., Steever, A. B., Wach, A., Phillippsen, P., & Pringle, J. R. (1998). Heterologous modules for efficient and versatile PCR-based gene targeting in Schizosaccharomyces pombe. Yeast Functional Analysis Reports, 14(10). 943-951. https://doi.org/10.1002/(SICI)1097-0061(199807)14:10<943::AID-YEA292>3.0.CO;2-Y
+
+Dixon J. R., Selvaraj, S., Yue, F., Kim, A., Li, Y., Shen, Y., Hu, M., Liu, J. S., & Ren, B. (2012). Topological domains in mammalian genomes identified by analysis of chromatin interactions. Nature, 485(7398). 376-380. https://doi.org/10.1038/nature11082
+
+Fields, S. & Song, O. (1989). A novel genetic system to detect protein-protein interactions. Nature, 340(6230). 245-246. https://doi.org/10.1038/340245a0
+
+Hudson, D. F., Marshall, K. M., & Earnshaw, W. C. (2009). Condensin: Architect of mitotic chromosomes. Chromosome Research, 17. 131-144. https://doi.org/10.1007/s10577-008-9009-7
+
+Kanke, M., Nishimura, K., Kanemaki, M., Kakimoto, T., Takahashi, T., Nakagawa, T., & Masukata, H. (2011). Auxin-inducible protein depletion system in fission yeast. BMC Cell Biology, 12(8). https://doi.org/10.1186/1471-2121-12-8
+
+Lieberman-Aiden, E., van Berkum, N. L., Williams, L., Imakaev, M., Ragoczy, T., Telling, A., Amit, I., Lajoie, B. R., Sabo, P. J., Dorschner, M. O., Sandstrom, R., Bernstein, B., Bender, M. A., Groudine, M., Gnirke, A., Stamatoyannopoulos, J., Mirny, L. A., Lander, E. S., & Dekker, J. (2009). Comprehensive mapping of long range interactions reveals folding principles of the human genome. Science, 326(5950). 289-293. https://dx.doi.org/10.1126%2Fscience.1181369
+
+Nasmyth, K., Haering, C. H. (2009). Cohesin: its roles and mechanisms. Annual Review of Genetics, 43(1). 525-558. https://doi.org/10.1146/annurev-genet-102108-134233
+
+Nicholas, E., Yamada, T., Cam, H. P., FitzGerald, P. C., Kobayashi, R., & Grewal, S. (2007). Distinct roles of HDAC complexes in promoter silencing, antisense suppression and DNA damage protection. Nature Structural & Molecular Biology, 14. 372-380. https://doi.org/10.1038/nsmb1239
+
+Noma, K. (2017). The yeast genomes in three dimensions: mechanisms and functions. Annual Review of Genetics, 27(51). 23-44. https://doi.org/10.1146/annurev-genet-120116-023438
+
+Tanizawa, H., Kim, K., Iwasaki, O., & Noma, K. (2017). Architectural alterations of the fission yeast genome during the cell cycle. Nature Structural & Molecular Biology, 24(11). 965-976. https://doi.org/10.1038/nsmb.3482
+
+Zheng, H. & Xie, W. (2019). The role of 3D genome organization in development and cell differentiation. Nature Reviews Molecular Cell Biology, 20. 435-550. https://doi.org/10.1038/s41580-019-0132-4
+
+## Dataset Identification
+The data I will be using is the result of the sequencing of Hi-C samples at the Genomics & Cell Characterization Core Facility:
+
+https://www.dropbox.com/sh/r0buz9fylmr0rwn/AACczw5mdRdfytfiHLDHMF4Ka?dl=0 
+
+The data is in the form of matrices, which can be converted to a data frame that contains the two interacting genome locations and association strength (score) for each genome-genome interaction. 
+
+## Workflow Plan
+#### QAQC:
+(For both wild type and Δsds3 sequencing data)
+
+1. Convert matrices to a data frame
+
+2. Remove NA scores
+
+3. Split columns describing interacting gene locations into chromosome name, gene start position, and gene end position
+
+#### Part I: Heat map workflow:
+1. Use geom tile with a color gradient to make a heat gradient of all the genome interactions (graph location of chr1 vs chr2) for both wild type and Δsds3 sequencing data
+
+2. Join wild type and Δsds3 sequencing data frames
+
+3. Mutate to make column of association score (strength) difference (wild type - Δsds3)
+
+4. Use geom tile with a color gradient to make a heat gradient of the difference in the genome interactions between wild type and Δsds3 sequencing data (graph location of chr1 vs chr2)
+
+#### Part II: Association strength vs distance:
+1. Mutate wild type data to make column of average location in genome for each genome location ((start + end) / 2)
+
+2. Mutate to make column of distance between two locations in genome
+
+3. Select/keep only distance and score columns
+
+4. Plot association score vs distance in a scatter plot with a best fit line using ggplot
+
+5. Repeat #1-4 for Δsds3 sequencing data
+
+#### Part III: Association strength vs distance depending on Sds3 presence:
+1. Group both data frames by distance 
+
+2. Mutate each to find average association score
+
+3. Join wild type and Δsds3 sequencing data frames
+
+4. Mutate to find difference between scores (Δsds3 - wild type) for each distance
+
+5. Plot difference as a line plot of distance vs difference in score with the area underneath the line filled in
